@@ -1,0 +1,84 @@
+@import "../../../../styles/_variables.scss";
+
+.hidden {
+  transform: translate(calc(-100% + 3rem));
+}
+
+.navbarWrapper {
+  position: fixed;
+  z-index: 1;
+
+  transition: transform 0.3s ease-in-out;
+
+  .hamburger {
+    right: 0.5rem;
+    top: 0.5rem;
+    position: absolute;
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+    color: $color-white;
+    width: fit-content;
+    padding: 0;
+    z-index: 2;
+
+    transition: filter 0.3s ease-in-out;
+
+    svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .backdrop {
+      filter: drop-shadow(-1px -1px 0px rgba($color-background, 0.6))
+        drop-shadow(1px -1px 0px rgba($color-background, 0.6))
+        drop-shadow(1px 1px 0px rgba($color-background, 0.6))
+        drop-shadow(-1px 1px 0px rgba($color-background, 0.6));
+    }
+  }
+
+  .notVisible {
+    opacity: 0;
+  }
+
+  .navbar {
+    width: 15rem;
+    height: 100vh;
+    background-color: $color-secondary;
+    color: $color-white;
+
+    transition: opacity 0.3s ease-in-out;
+    padding: 0.5rem;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+    }
+
+    .list {
+      margin-top: 2rem;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      font-size: 1.25rem;
+
+      .link {
+        display: block;
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 0.75rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .active {
+        background-color: $color-primary;
+        color: $color-secondary;
+      }
+    }
+  }
+}

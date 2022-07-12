@@ -1,44 +1,29 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./NavbarPhone.module.scss";
-import Backdrop from "../../Backdrop/Backdrop";
+import styles from "./NavbarDesktop.module.scss";
 
-const NavbarPhone = ({}) => {
-  const [isExtended, setIsExtended] = useState(false);
+import useScrollPosition from "../../../../hooks/useScrollPosition";
+
+const NavbarDesktop = ({}) => {
+  const [isTransparent, setIsTransparent] = useState(false);
+  const scrollPosition = useScrollPosition();
 
   useEffect(() => {
-    if (isExtended) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isExtended]);
-
-  const hideBackdrop = () => {
-    setIsExtended(false);
-  };
+    setIsTransparent(scrollPosition !== 0);
+  }, [scrollPosition]);
 
   return (
     <div>
       <nav
         className={`${styles.navbarWrapper} ${
-          !isExtended ? styles.hidden : ""
+          !isTransparent ? styles.transparent : ""
         }`}
       >
-        <button
-          className={styles.hamburger}
-          onClick={() => setIsExtended(!isExtended)}
-        >
-          <FontAwesomeIcon
-            icon={faBars}
-            className={!isExtended ? styles.backdrop : ""}
-          />
-        </button>
         <div
-          className={`${styles.navbar} ${!isExtended ? styles.notVisible : ""}`}
+          className={`${styles.navbar} ${
+            isTransparent ? styles.transparent : ""
+          }`}
         >
           <div className={styles.header}>
             <Link href="/">
@@ -75,9 +60,8 @@ const NavbarPhone = ({}) => {
           </ul>
         </div>
       </nav>
-      {isExtended && <Backdrop onClick={hideBackdrop} />}
     </div>
   );
 };
 
-export default NavbarPhone;
+export default NavbarDesktop;
