@@ -1,0 +1,57 @@
+@import "../../../../styles/_variables.scss";
+
+.hidden {
+  transform: translate(-9rem);
+}
+
+.navbarWrapper {
+  position: fixed;
+  z-index: 1;
+
+  .navbar:not(:hover).transparent {
+    background-color: rgba($color-secondary, 0);
+  }
+
+  .navbar {
+    width: 100vw;
+    background-color: $color-secondary;
+    color: $color-white;
+    display: flex;
+    justify-content: space-between;
+
+    transition: background-color 0.3s ease-in-out;
+    padding: 0.5rem;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .logo {
+        font-size: 1.75rem;
+        font-weight: 800;
+      }
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+
+      .link {
+        display: inline-block;
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 0.75rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+
+      .active {
+        background-color: $color-primary;
+        color: $color-secondary;
+      }
+    }
+  }
+}
