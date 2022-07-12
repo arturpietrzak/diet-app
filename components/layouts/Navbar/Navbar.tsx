@@ -6,8 +6,9 @@ import NavbarTablet from "./NavbarTablet/NavbarTablet";
 
 const Navbar = () => {
   const deviceType: string = useDeviceType();
-
-  if (deviceType === "phone") {
+  if (deviceType === "undefined") {
+    return null;
+  } else if (deviceType === "phone") {
     return <NavbarPhone />;
   } else if (deviceType === "tablet") {
     return <NavbarTablet />;

@@ -4,7 +4,9 @@ import useWindowSize from "./useWindowSize";
 const useDeviceType = (): string => {
   const { width } = useWindowSize();
 
-  if (width < 576) {
+  if (width === 0) {
+    return "undefined";
+  } else if (width < 576) {
     return "phone";
   } else if (width < 768) {
     return "tablet";

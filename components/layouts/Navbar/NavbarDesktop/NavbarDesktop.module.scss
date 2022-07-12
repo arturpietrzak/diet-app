@@ -1,12 +1,11 @@
 @import "../../../../styles/_variables.scss";
-
-.hidden {
-  transform: translate(-9rem);
-}
+@import "../../../../styles/_animations.scss";
 
 .navbarWrapper {
   position: fixed;
   z-index: 1;
+
+  animation: 0.3s ease-in-out loadOpacity;
 
   .navbar:not(:hover).transparent {
     background-color: rgba($color-secondary, 0);
