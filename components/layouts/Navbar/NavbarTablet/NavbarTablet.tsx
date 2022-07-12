@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./navbarTablet.module.scss";
+import styles from "./NavbarTablet.module.scss";
 import Backdrop from "../../Backdrop/Backdrop";
 
 const NavbarTablet = ({}) => {
