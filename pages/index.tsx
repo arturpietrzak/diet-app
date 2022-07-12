@@ -9,7 +9,7 @@ const Home: NextPage = () => {
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem numquam
       illum error nesciunt delectus iusto et non tempore necessitatibus,
       temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
+      Cumque, perferendis sdunt?Lorem ipsum dolor sit amet consectetur
       adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
       neque possimus quos ut alias reiciendis modi dignissimos quis est
       perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
