@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 
-import Navbar from "../components/layouts/Navbar/NavbarPhone/NavbarPhone";
+import Navbar from "../components/layouts/navbar/navbarPhone/NavbarPhone";
 
 const Home: NextPage = () => {
   return (

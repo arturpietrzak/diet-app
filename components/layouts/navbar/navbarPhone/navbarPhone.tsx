@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./NavbarPhone.module.scss";
-import Backdrop from "../../Backdrop/Backdrop";
+import Backdrop from "../../backdrop/Backdrop";
 
 const NavbarPhone = ({}) => {
   const [isExtended, setIsExtended] = useState(false);
