@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./navbarPhone.module.scss";
-import Backdrop from "../../backdrop/backdrop";
+import styles from "./NavbarPhone.module.scss";
+import Backdrop from "../../Backdrop/Backdrop";
 
 const NavbarPhone = ({}) => {
   const [isExtended, setIsExtended] = useState(false);

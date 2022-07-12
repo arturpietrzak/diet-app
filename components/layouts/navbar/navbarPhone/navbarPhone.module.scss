@@ -1,7 +1,7 @@
 @import "../../../../styles/_variables.scss";
 
 .hidden {
-  transform: translate(-9rem);
+  transform: translate(calc(-100% + 3rem));
 }
 
 .navbarWrapper {

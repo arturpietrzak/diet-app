@@ -1,7 +1,7 @@
-import type { NextPage } from "next"
-import styles from "../styles/Home.module.css"
+import type { NextPage } from "next";
+import styles from "../styles/Home.module.css";
 
-import Navbar from "../components/layouts/navbar/navbarPhone/navbarPhone"
+import Navbar from "../components/layouts/Navbar/NavbarPhone/NavbarPhone";
 
 const Home: NextPage = () => {
   return (
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
       reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
       beatae.
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

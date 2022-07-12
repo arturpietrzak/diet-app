@@ -1,8 +1,7 @@
 import useDeviceType from "../../../hooks/useDeviceType";
-
-import NavbarDesktop from "./navbarDesktop/navbarDesktop";
-import NavbarPhone from "./navbarPhone/navbarPhone";
-import NavbarTablet from "./navbarTablet/navbarTablet";
+import NavbarDesktop from "./NavbarDesktop/NavbarDesktop";
+import NavbarPhone from "./NavbarPhone/NavbarPhone";
+import NavbarTablet from "./NavbarTablet/NavbarTablet";
 
 const Navbar = () => {
   const deviceType: string = useDeviceType();

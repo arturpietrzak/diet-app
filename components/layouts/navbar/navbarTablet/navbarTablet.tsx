@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./navbarTablet.module.scss";
-import Backdrop from "../../backdrop/backdrop";
+import Backdrop from "../../Backdrop/Backdrop";
 
 const NavbarTablet = ({}) => {
   const [isExtended, setIsExtended] = useState(false);

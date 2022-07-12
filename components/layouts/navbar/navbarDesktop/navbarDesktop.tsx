@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./navbarDesktop.module.scss";
-import Backdrop from "../../backdrop/backdrop";
+import styles from "./NavbarDesktop.module.scss";
 
 import useScrollPosition from "../../../../hooks/useScrollPosition";
 
