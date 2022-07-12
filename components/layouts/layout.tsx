@@ -1,5 +1,4 @@
 import * as React from "react";
-import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
 
 type LayoutProps = {
@@ -11,7 +10,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <React.Fragment>
       <Navbar />
       <main>{children}</main>
-      <Footer />
     </React.Fragment>
   );
 };
