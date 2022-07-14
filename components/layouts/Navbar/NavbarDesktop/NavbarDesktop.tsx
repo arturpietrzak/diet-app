@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useRef, useEffect, useState } from "react";
 
 import styles from "./NavbarDesktop.module.scss";
 
@@ -12,10 +12,21 @@ type NavbarProps = {
 
 const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
   const [isTransparent, setIsTransparent] = useState(false);
+  const [activePosition, setActivePosition] = useState(-1);
+
   const scrollPosition = useScrollPosition();
+
   const router = useRouter();
 
-  console.log(router.asPath);
+  useEffect(() => {
+    links.forEach((link, index) => {
+      if (router.asPath === link.href) {
+        setActivePosition(index);
+      }
+    });
+  }, []);
+
+  console.log(activePosition);
 
   useEffect(() => {
     setIsTransparent(scrollPosition > 64);
@@ -41,19 +52,21 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
             </Link>
           </div>
           <ul className={styles.list}>
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href}>
-                  <a
-                    className={`${styles.link} ${
-                      router.asPath === link.href ? styles.active : ""
-                    }`}
-                  >
-                    {link.text}
-                  </a>
-                </Link>
-              </li>
-            ))}
+            {links.map((link, index) => {
+              return (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <a
+                      className={`${styles.link} ${
+                        router.asPath === link.href ? styles.active : ""
+                      }`}
+                    >
+                      {link.text}
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
