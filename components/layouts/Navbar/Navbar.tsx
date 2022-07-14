@@ -13,7 +13,15 @@ const Navbar = () => {
   } else if (deviceType === "tablet") {
     return <NavbarTablet />;
   }
-  return <NavbarDesktop />;
+  return (
+    <NavbarDesktop
+      links={[
+        { href: "/excercises", text: "Excercises" },
+        { href: "/diets", text: "Diets" },
+        { href: "/about", text: "About" },
+      ]}
+    />
+  );
 };
 
 export default Navbar;

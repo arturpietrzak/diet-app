@@ -1,16 +1,24 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import styles from "./NavbarDesktop.module.scss";
 
 import useScrollPosition from "../../../../hooks/useScrollPosition";
 
-const NavbarDesktop = ({}) => {
+type NavbarProps = {
+  links: { href: string; text: string }[];
+};
+
+const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
   const [isTransparent, setIsTransparent] = useState(false);
   const scrollPosition = useScrollPosition();
+  const router = useRouter();
+
+  console.log(router.asPath);
 
   useEffect(() => {
-    setIsTransparent(scrollPosition !== 0);
+    setIsTransparent(scrollPosition > 64);
   }, [scrollPosition]);
 
   return (
@@ -33,30 +41,19 @@ const NavbarDesktop = ({}) => {
             </Link>
           </div>
           <ul className={styles.list}>
-            <li>
-              <Link href="/">
-                <a
-                  href="sass.html"
-                  className={`${styles.link} ${styles.active}`}
-                >
-                  Sass
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a href="badges.html" className={styles.link}>
-                  Components
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a href="collapsible.html" className={styles.link}>
-                  JavaScript
-                </a>
-              </Link>
-            </li>
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>
+                  <a
+                    className={`${styles.link} ${
+                      router.asPath === link.href ? styles.active : ""
+                    }`}
+                  >
+                    {link.text}
+                  </a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
