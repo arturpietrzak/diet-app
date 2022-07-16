@@ -1,10 +1,14 @@
-@import "../../styles/variables.scss";
+@import "styles/variables.scss";
 
 .main {
-  min-height: 100vh - var(--navbar-height);
+  min-height: 100vh - var($navbar-height-desktop);
   color: $color-white;
 
   > * {
-    padding: 3em 1rem;
+    padding: 3rem 1rem 1rem;
+
+    @media (min-width: $breakpoint-md) {
+      padding-top: 5rem;
+    }
   }
 }
