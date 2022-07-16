@@ -8,7 +8,7 @@ const useDeviceType = (): string => {
     return "undefined";
   } else if (width < 576) {
     return "phone";
-  } else if (width < 768) {
+  } else if (width < 1024) {
     return "tablet";
   }
 

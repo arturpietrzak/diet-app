@@ -9,15 +9,41 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (min-width: $breakpoint-md) {
+      justify-content: flex-start;
+    }
+
     .headerText {
       padding: 0 1rem;
-      font-size: 1.5rem;
+      font-size: 7.5vw;
       justify-self: center;
       align-self: center;
       position: absolute;
       z-index: 1;
       color: $color-white;
       font-weight: 300;
+
+      @media screen and (min-width: $breakpoint-sm) {
+        font-size: 5vw;
+      }
+
+      @media screen and (min-width: $breakpoint-md) {
+        font-size: 2.5rem;
+        width: 50%;
+        justify-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          width: fit-content;
+        }
+      }
+
+      @media screen and (min-width: $breakpoint-lg) {
+        font-size: 3.25rem;
+      }
 
       .highlight {
         color: $color-primary;

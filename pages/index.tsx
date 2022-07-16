@@ -19,11 +19,7 @@ const Home: NextPage = () => {
           <Image
             className={styles.image}
             layout="fill"
-            src={
-              deviceType === "desktop"
-                ? "/images/desktop-main-img.png"
-                : "/images/mobile-main-img.png"
-            }
+            src={`/images/main-img-${deviceType}.png`}
             alt="diet"
           />
         </div>
