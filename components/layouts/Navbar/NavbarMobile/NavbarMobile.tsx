@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./NavbarPhone.module.scss";
+import styles from "./NavbarMobile.module.scss";
 import Backdrop from "../../Backdrop/Backdrop";
+import { NavbarProps } from "../Navbar";
+import { useRouter } from "next/router";
 
-const NavbarPhone = ({}) => {
+const NavbarMobile: React.FC<NavbarProps> = ({ links }) => {
   const [isExtended, setIsExtended] = useState(false);
 
   useEffect(() => {
@@ -17,9 +19,7 @@ const NavbarPhone = ({}) => {
     }
   }, [isExtended]);
 
-  const hideBackdrop = () => {
-    setIsExtended(false);
-  };
+  const router = useRouter();
 
   return (
     <div>
@@ -42,42 +42,38 @@ const NavbarPhone = ({}) => {
         >
           <div className={styles.header}>
             <Link href="/">
-              <a href="#" className={styles.logo}>
+              <a
+                href="#"
+                className={styles.logo}
+                onClick={() => setIsExtended(!isExtended)}
+              >
                 Logo
               </a>
             </Link>
           </div>
           <ul className={styles.list}>
-            <li>
-              <Link href="/">
-                <a
-                  href="sass.html"
-                  className={`${styles.link} ${styles.active}`}
-                >
-                  Sass
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a href="badges.html" className={styles.link}>
-                  Components
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a href="collapsible.html" className={styles.link}>
-                  JavaScript
-                </a>
-              </Link>
-            </li>
+            {links.map((link) => {
+              return (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <a
+                      className={`${styles.link} ${
+                        router.asPath === link.href ? styles.active : ""
+                      }`}
+                      onClick={() => setIsExtended(!isExtended)}
+                    >
+                      {link.text}
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
-      {isExtended && <Backdrop onClick={hideBackdrop} />}
+      {isExtended && <Backdrop onClick={() => setIsExtended(false)} />}
     </div>
   );
 };
 
-export default NavbarPhone;
+export default NavbarMobile;

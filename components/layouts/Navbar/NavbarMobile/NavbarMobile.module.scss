@@ -7,7 +7,7 @@
 
 .navbarWrapper {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
 
   animation: 0.3s ease-in-out loadOpacity;
   transition: transform 0.3s ease-in-out;
@@ -27,8 +27,8 @@
     transition: filter 0.3s ease-in-out;
 
     svg {
-      width: 1.75rem;
-      height: 1.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
     .backdrop {
@@ -44,7 +44,7 @@
   }
 
   .navbar {
-    width: 15rem;
+    width: 12rem;
     height: 100vh;
     background-color: $color-secondary;
     color: $color-white;
@@ -57,7 +57,7 @@
       justify-content: space-between;
 
       .logo {
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: 800;
       }
     }
@@ -67,7 +67,8 @@
       width: 100%;
       list-style: none;
       padding: 0;
-      font-size: 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
 
       .link {
         display: block;
@@ -78,8 +79,8 @@
       }
 
       .active {
-        background-color: $color-primary;
-        color: $color-secondary;
+        color: $color-primary;
+        font-weight: 700;
       }
     }
   }

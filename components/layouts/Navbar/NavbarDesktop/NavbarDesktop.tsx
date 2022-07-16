@@ -5,14 +5,10 @@ import { useLayoutEffect, useRef, useEffect, useState } from "react";
 import styles from "./NavbarDesktop.module.scss";
 
 import useScrollPosition from "../../../../hooks/useScrollPosition";
-
-type NavbarProps = {
-  links: { href: string; text: string }[];
-};
+import { NavbarProps } from "../Navbar";
 
 const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
   const [isTransparent, setIsTransparent] = useState(false);
-  const [activePosition, setActivePosition] = useState(-1);
 
   const scrollPosition = useScrollPosition();
 
@@ -38,8 +34,7 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
             </Link>
           </div>
           <ul className={styles.list}>
-            <div className={styles.underline}></div>
-            {links.map((link, index) => {
+            {links.map((link) => {
               return (
                 <li key={link.href}>
                   <Link href={link.href}>
@@ -51,7 +46,7 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
           </ul>
           <div className={styles.account}>
             <Link href="/account">
-              <a className={""}>Account</a>
+              <a>Account</a>
             </Link>
           </div>
         </div>
