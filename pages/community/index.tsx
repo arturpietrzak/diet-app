@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Post, { PostProps } from "../../components/community/post/Post";
-import { getRandomInt } from "../../utils/randon";
+import { getRandomInt } from "../../utils/random";
 
 import styles from "./community.module.scss";
 

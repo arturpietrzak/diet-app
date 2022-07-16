@@ -11,6 +11,8 @@ import {
 import styles from "./Post.module.scss";
 import { useState } from "react";
 
+import { rgbDataURL } from "../../../utils/rgbDataUrl";
+
 export type PostProps = {
   id: string;
   userImageUrl: string;
@@ -75,6 +77,9 @@ const Post = ({
               layout="responsive"
               src={imageUrl}
               alt="post"
+              onLoad={() => console.log("loaded")}
+              placeholder="blur"
+              blurDataURL={rgbDataURL(111, 111, 111)}
             />
           </div>
         </div>
@@ -82,7 +87,9 @@ const Post = ({
       <div className={styles.ratings}>
         <span className={styles.likes} onClick={handleLikeClick}>
           <FontAwesomeIcon
-            className={styles.icon}
+            className={`${styles.icon} ${
+              isLikedByUser ? styles.iconLiked : ""
+            }`}
             icon={isLikedByUser ? faHeart : farHeart}
           />
           <span>{likesCount}</span>

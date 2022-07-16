@@ -5,6 +5,11 @@ import useDeviceType from "../hooks/useDeviceType";
 
 const Home: NextPage = () => {
   const deviceType = useDeviceType();
+
+  if (deviceType === "undefined") {
+    return <div></div>;
+  }
+
   return (
     <div className={styles.pageContainer}>
       <header className={styles.header}>
@@ -20,7 +25,10 @@ const Home: NextPage = () => {
             className={styles.image}
             layout="fill"
             src={`/images/main-img-${deviceType}.png`}
+            blurDataURL={`/images/blur-main.png`}
+            priority
             alt="diet"
+            placeholder="blur"
           />
         </div>
       </header>

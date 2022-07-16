@@ -7,6 +7,10 @@
   > * {
     padding: 3rem 1rem 1rem;
 
+    @media (min-width: $breakpoint-sm) {
+      padding-top: 1rem;
+    }
+
     @media (min-width: $breakpoint-md) {
       padding-top: 5rem;
     }

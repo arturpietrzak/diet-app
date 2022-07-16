@@ -18,6 +18,7 @@
 
       .image {
         border-radius: 10rem;
+        transition: 0.3s;
 
         object-fit: cover;
         pointer-events: none;
@@ -26,8 +27,7 @@
 
     .userName {
       margin-left: 1rem;
-      font-size: 1.25rem;
-      font-weight: bold;
+      font-weight: 300;
     }
   }
 
@@ -48,6 +48,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        transition: 0.3s;
       }
     }
   }
@@ -59,10 +60,17 @@
     align-items: center;
     height: fit-content;
     user-select: none;
+    font-size: 1.25rem;
 
     .likes {
+      cursor: pointer;
+
       .icon {
         margin-right: 0.5rem;
+      }
+
+      .iconLiked {
+        color: $color-primary;
       }
     }
 
