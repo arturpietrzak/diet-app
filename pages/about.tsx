@@ -1,6 +1,7 @@
+import type { NextPage } from "next";
 import Link from "next/link";
 
-export default function Excercises() {
+const Excercises: NextPage = () => {
   return (
     <>
       <h1>About</h1>
@@ -9,4 +10,4 @@ export default function Excercises() {
       </Link>
     </>
   );
-}
+};

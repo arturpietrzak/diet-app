@@ -1,205 +1,33 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
+import styles from "./index.module.scss";
+import Image from "next/image";
+import useDeviceType from "../hooks/useDeviceType";
 
 const Home: NextPage = () => {
+  const deviceType = useDeviceType();
   return (
-    <div className={styles.container}>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem numquam
-      illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sdunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem
-      numquam illum error nesciunt delectus iusto et non tempore necessitatibus,
-      temporibus labore perspiciatis dicta! Aliquid magni autem praesentium.
-      Cumque, perferendis sunt?Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Explicabo ad, mollitia voluptate minima vero dolorem
-      neque possimus quos ut alias reiciendis modi dignissimos quis est
-      perspiciatis enim, pariatur omnis beatae.Lorem ipsum dolor sit amet
-      consectetur, adipisicing elit. Dolorem numquam illum error nesciunt
-      delectus iusto et non tempore necessitatibus, temporibus labore
-      perspiciatis dicta! Aliquid magni autem praesentium. Cumque, perferendis
-      sunt?Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-      ad, mollitia voluptate minima vero dolorem neque possimus quos ut alias
-      reiciendis modi dignissimos quis est perspiciatis enim, pariatur omnis
-      beatae.
+    <div className={styles.pageContainer}>
+      <header className={styles.header}>
+        <div className={styles.headerText}>
+          <p>
+            Lorem ipsum
+            <span className={styles.highlight}> dolor sit </span>
+          </p>
+          <p>amet consectetur.</p>
+        </div>
+        <div className={styles.imageContainer}>
+          <Image
+            className={styles.image}
+            layout="fill"
+            src={
+              deviceType === "desktop"
+                ? "/images/desktop-main-img.png"
+                : "/images/mobile-main-img.png"
+            }
+            alt="diet"
+          />
+        </div>
+      </header>
     </div>
   );
 };

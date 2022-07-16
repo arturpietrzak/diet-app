@@ -16,20 +16,8 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
 
   const scrollPosition = useScrollPosition();
 
-  const router = useRouter();
-
   useEffect(() => {
-    links.forEach((link, index) => {
-      if (router.asPath === link.href) {
-        setActivePosition(index);
-      }
-    });
-  }, []);
-
-  console.log(activePosition);
-
-  useEffect(() => {
-    setIsTransparent(scrollPosition > 64);
+    setIsTransparent(scrollPosition <= 0);
   }, [scrollPosition]);
 
   return (
@@ -46,28 +34,26 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
         >
           <div className={styles.header}>
             <Link href="/">
-              <a href="#" className={styles.logo}>
-                Logo
-              </a>
+              <a className={styles.logo}>Logo</a>
             </Link>
           </div>
           <ul className={styles.list}>
+            <div className={styles.underline}></div>
             {links.map((link, index) => {
               return (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a
-                      className={`${styles.link} ${
-                        router.asPath === link.href ? styles.active : ""
-                      }`}
-                    >
-                      {link.text}
-                    </a>
+                    <a className={styles.link}>{link.text}</a>
                   </Link>
                 </li>
               );
             })}
           </ul>
+          <div className={styles.account}>
+            <Link href="/account">
+              <a className={""}>Account</a>
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

@@ -1,6 +1,7 @@
+import type { NextPage } from "next";
 import Link from "next/link";
 
-export default function Diets() {
+const Diets: NextPage = () => {
   return (
     <>
       <h1>Diets page</h1>
@@ -9,4 +10,6 @@ export default function Diets() {
       </Link>
     </>
   );
-}
+};
+
+export default Diets;

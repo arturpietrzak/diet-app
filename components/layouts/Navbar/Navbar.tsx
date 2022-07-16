@@ -16,9 +16,10 @@ const Navbar = () => {
   return (
     <NavbarDesktop
       links={[
-        { href: "/excercises", text: "Excercises" },
         { href: "/diets", text: "Diets" },
-        { href: "/about", text: "About" },
+        { href: "/community", text: "Community" },
+        { href: "/progress", text: "Progress" },
+        { href: "/excercises", text: "Excercises" },
       ]}
     />
   );

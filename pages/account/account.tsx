@@ -1,12 +1,15 @@
+import type { NextPage } from "next";
 import Link from "next/link";
 
-export default function Excercises() {
+const Account: NextPage = () => {
   return (
     <>
-      <h1>Excercises</h1>
+      <h1>Account</h1>
       <Link href="/">
         <a>Go back home</a>
       </Link>
     </>
   );
-}
+};
+
+export default Account;

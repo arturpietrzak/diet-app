@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
-const FourOhFour: NextPage = () => {
+const Excercises: NextPage = () => {
   return (
     <>
-      <h1>404 - Page Not Found</h1>
+      <h1>Excercises</h1>
       <Link href="/">
         <a>Go back home</a>
       </Link>
@@ -12,4 +12,4 @@ const FourOhFour: NextPage = () => {
   );
 };
 
-export default FourOhFour;
+export default Excercises;
