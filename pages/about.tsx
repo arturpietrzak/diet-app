@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
-const Excercises: NextPage = () => {
+const About: NextPage = () => {
   return (
     <>
       <h1>About</h1>
@@ -11,3 +11,5 @@ const Excercises: NextPage = () => {
     </>
   );
 };
+
+export default About;
