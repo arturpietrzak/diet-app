@@ -40,7 +40,6 @@ const Post = ({
   const [likesCount, setLikesCount] = useState(likes);
 
   const handleLikeClick = () => {
-    console.log("dasdsadas");
     if (isLikedByUser) {
       setLikesCount(likesCount - 1);
     } else {
@@ -86,11 +85,11 @@ const Post = ({
             className={styles.icon}
             icon={isLikedByUser ? faHeart : farHeart}
           />
-          {likesCount}
+          <span>{likesCount}</span>
         </span>
         <span className={styles.comments}>
           <FontAwesomeIcon className={styles.icon} icon={faComments} />
-          {comments}
+          <span>{comments}</span>
         </span>
       </div>
     </div>
