@@ -1,7 +1,11 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const Diets: NextPage = () => {
+const DietsShowPage: NextPage = () => {
+  const router = useRouter();
+  const { dietId } = router.query;
+  console.log(dietId);
   return (
     <div className="">
       <h1>Diets page</h1>
@@ -12,4 +16,4 @@ const Diets: NextPage = () => {
   );
 };
 
-export default Diets;
+export default DietsShowPage;

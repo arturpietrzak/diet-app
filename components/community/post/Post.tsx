@@ -77,7 +77,6 @@ const Post = ({
               layout="responsive"
               src={imageUrl}
               alt="post"
-              onLoad={() => console.log("loaded")}
               placeholder="blur"
               blurDataURL={rgbDataURL(111, 111, 111)}
             />

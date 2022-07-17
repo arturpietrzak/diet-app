@@ -60,10 +60,13 @@ const placeholderPosts: PostProps[] = [
 const Community: NextPage = () => {
   return (
     <div className={styles.pageContainer}>
-      <h1 className={styles.header}>Recent posts</h1>
-      {placeholderPosts.map((post) => (
-        <Post key={post.id} {...post} />
-      ))}
+      <div className={styles.postsContainer}>
+        <h1 className={styles.header}>Recent posts</h1>
+
+        {placeholderPosts.map((post) => (
+          <Post key={post.id} {...post} />
+        ))}
+      </div>
     </div>
   );
 };
