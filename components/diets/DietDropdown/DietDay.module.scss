@@ -1,0 +1,55 @@
+@import "styles/variables.scss";
+
+.dietDayContainer {
+  @media screen and (max-width: $breakpoint-md) {
+    margin: 0 auto;
+    max-width: 520px;
+  }
+
+  .day {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dietDay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media screen and (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+
+    .meal {
+      background-color: $color-secondary;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      flex: 1;
+
+      .preparationTime {
+        margin-bottom: 0.5rem;
+
+        .icon {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .mealName {
+        margin-bottom: 0.5rem;
+
+        @media screen and (min-width: $breakpoint-sm) {
+          font-size: 1.25rem;
+        }
+
+        @media screen and (min-width: $breakpoint-md) {
+          font-size: 1rem;
+        }
+
+        @media screen and (min-width: $breakpoint-lg) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

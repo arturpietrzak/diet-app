@@ -1,7 +1,7 @@
 @import "styles/variables.scss";
 
 .main {
-  min-height: 100vh - var($navbar-height-desktop);
+  min-height: 100vh;
   color: $color-white;
 
   > * {

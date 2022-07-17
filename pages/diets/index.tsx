@@ -6,10 +6,10 @@ import styles from "./diets.module.scss";
 
 const DietsIndexPage: NextPage = () => {
   return (
-    <div className="">
-      <h1>Diets page shows diet for this week</h1>
-      <div className=""></div>
-      <DietDay {...placeholderProps} />
+    <div className={styles.dietsPageContainer}>
+      <div className={styles.dietDayContainer}>
+        <DietDay {...placeholderProps} />
+      </div>
     </div>
   );
 };
@@ -20,25 +20,36 @@ const placeholderProps = {
     {
       id: "1",
       name: "Oatmeal with strawberries",
-      imageUrl: "",
+      preparationTime: 10,
+      imageUrl: " ",
       calories: 300,
     },
     {
       id: "2",
       name: "Quesadilla with tortilla",
-      imageUrl: "",
+      preparationTime: 20,
+      imageUrl: " ",
       calories: 400,
     },
     {
       id: "3",
       name: "Chicken with rice",
-      imageUrl: "",
+      preparationTime: 15,
+      imageUrl: " ",
       calories: 500,
     },
     {
       id: "4",
       name: "Steak with potatoes",
-      imageUrl: "",
+      preparationTime: 35,
+      imageUrl: " ",
+      calories: 600,
+    },
+    {
+      id: "4",
+      name: "Steak with potatoes",
+      preparationTime: 35,
+      imageUrl: " ",
       calories: 600,
     },
   ],
