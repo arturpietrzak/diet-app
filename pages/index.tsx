@@ -44,6 +44,7 @@ const Home: NextPage = () => {
             src={getBackgreoundImage(deviceType)}
             priority
             alt="diet"
+            placeholder="blur"
           />
         </div>
       </header>
