@@ -3,6 +3,23 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import useDeviceType from "../hooks/useDeviceType";
 
+import backgroundMobile from "../public/images/main-img-phone.png";
+import backgroundTablet from "../public/images/main-img-tablet.png";
+import backgroundDesktop from "../public/images/main-img-desktop.png";
+
+const getBackgreoundImage = (deviceType: string) => {
+  switch (deviceType) {
+    case "mobile":
+      return backgroundMobile;
+    case "tablet":
+      return backgroundTablet;
+    case "desktop":
+      return backgroundDesktop;
+    default:
+      return backgroundDesktop;
+  }
+};
+
 const Home: NextPage = () => {
   const deviceType = useDeviceType();
 
@@ -24,11 +41,9 @@ const Home: NextPage = () => {
           <Image
             className={styles.image}
             layout="fill"
-            src={`/images/main-img-${deviceType}.png`}
-            blurDataURL={`/images/blur-main.png`}
+            src={getBackgreoundImage(deviceType)}
             priority
             alt="diet"
-            placeholder="blur"
           />
         </div>
       </header>

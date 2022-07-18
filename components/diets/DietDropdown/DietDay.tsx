@@ -5,6 +5,7 @@ import styles from "./DietDay.module.scss";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { rgbDataURL } from "../../../utils/rgbDataUrl";
 
 type DietDayProps = {
   date: Date;
@@ -37,9 +38,12 @@ const DietDay = ({ date, meals }: DietDayProps) => {
               </div>
               {meal.imageUrl && (
                 <Image
+                  className={styles.image}
                   height="100"
                   width="100%"
                   layout="responsive"
+                  placeholder="blur"
+                  blurDataURL={rgbDataURL(111, 111, 111)}
                   loader={() => imageLoader(meal.imageUrl!, 300, 300)}
                   src={meal.imageUrl}
                   alt={meal.name}

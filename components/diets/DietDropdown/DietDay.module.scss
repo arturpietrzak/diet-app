@@ -1,6 +1,10 @@
 @import "styles/variables.scss";
 
 .dietDayContainer {
+  .image {
+    transition: 0.3s;
+  }
+
   @media screen and (max-width: $breakpoint-md) {
     margin: 0 auto;
     max-width: 520px;
