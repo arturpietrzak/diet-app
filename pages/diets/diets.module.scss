@@ -1,12 +1,15 @@
 @import "styles/variables.scss";
 
 .dietsPageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 35rem 4fr;
+  grid-gap: 1rem;
+  height: 100vh;
+  overflow: hidden;
 
   .dietDayContainer {
     width: 100%;
+    overflow-y: scroll;
 
     .dietDayControlsContainer {
       display: flex;
@@ -15,12 +18,25 @@
       justify-content: space-around;
       width: 100%;
       margin-bottom: 3rem;
+      position: relative;
 
       .dietDayControls {
         display: flex;
-        justify-content: space-between;
+        position: fixed;
+        justify-content: space-around;
         align-items: center;
-        width: 30rem;
+        width: unset;
+        bottom: 1rem;
+        padding: 1.25rem;
+        gap: 2rem;
+        left: 1rem;
+        background-color: $color-secondary;
+        background: linear-gradient(
+          0deg,
+          rgba($color-secondary, 1) 0%,
+          rgba(darken($color-secondary, 4), 1) 100%
+        );
+        right: calc(100% - 36rem);
 
         .day {
           font-size: 1.25rem;
@@ -66,6 +82,7 @@
     border-radius: 0.5rem;
     padding: 0.75rem;
     margin-bottom: 1rem;
+    height: fit-content;
 
     .macro {
       display: grid;
@@ -79,6 +96,10 @@
 
       .data {
         margin-top: 1rem;
+      }
+
+      .pieChart {
+        height: 20rem;
       }
     }
   }

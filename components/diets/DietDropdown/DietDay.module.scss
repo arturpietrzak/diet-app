@@ -21,15 +21,15 @@
     gap: 1rem;
     margin-bottom: 2rem;
 
-    @media screen and (min-width: $breakpoint-md) {
-      flex-direction: row;
-    }
-
     .meal {
       background-color: $color-secondary;
       padding: 0.75rem;
       border-radius: 0.5rem;
       flex: 1;
+
+      &:last-of-type {
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
 
       .preparationTime {
         margin-bottom: 0.5rem;
