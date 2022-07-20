@@ -10,6 +10,7 @@
   .dietDayContainer {
     width: 100%;
     overflow-y: scroll;
+    margin-bottom: 0.5rem;
 
     .dietDayControlsContainer {
       display: flex;
@@ -17,7 +18,7 @@
       align-items: center;
       justify-content: space-around;
       width: 100%;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       position: relative;
 
       .dietDayControls {
@@ -31,12 +32,8 @@
         gap: 2rem;
         left: 1rem;
         background-color: $color-secondary;
-        background: linear-gradient(
-          0deg,
-          rgba($color-secondary, 1) 0%,
-          rgba(darken($color-secondary, 4), 1) 100%
-        );
         right: calc(100% - 36rem);
+        border-radius: 0 0 0.5rem 0.5rem;
 
         .day {
           font-size: 1.25rem;
