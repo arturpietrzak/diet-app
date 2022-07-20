@@ -61,9 +61,7 @@
       }
 
       .active {
-        z-index: 2;
-        color: $color-secondary;
-        background-color: $color-primary;
+        color: $color-primary;
       }
 
       .activeHighlightContainer {

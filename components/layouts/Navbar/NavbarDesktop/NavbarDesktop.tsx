@@ -11,6 +11,7 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
   const [isTransparent, setIsTransparent] = useState(false);
 
   const scrollPosition = useScrollPosition();
+  const router = useRouter();
 
   useEffect(() => {
     setIsTransparent(scrollPosition <= 0);
@@ -38,7 +39,13 @@ const NavbarDesktop: React.FC<NavbarProps> = ({ links }) => {
               return (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <a className={styles.link}>{link.text}</a>
+                    <a
+                      className={`${styles.link} ${
+                        router.asPath === link.href ? styles.active : ""
+                      }`}
+                    >
+                      {link.text}
+                    </a>
                   </Link>
                 </li>
               );

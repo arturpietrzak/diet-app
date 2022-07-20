@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { dateFormatter } from "../../../utils/dateFormatter";
 import styles from "./DietDay.module.scss";
 
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { rgbDataURL } from "../../../utils/rgbDataUrl";
@@ -24,7 +24,6 @@ const imageLoader = (src: string, height: number, width: number) => {
 const DietDay = ({ date, meals }: DietDayProps) => {
   return (
     <div className={styles.dietDayContainer}>
-      <h2 className={styles.day}>{dateFormatter(date)}</h2>
       <div className={styles.dietDay}>
         {meals.map((meal) => (
           <Link key={meal.id} href={`/diets/${meal.id}`}>
