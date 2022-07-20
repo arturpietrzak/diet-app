@@ -12,6 +12,10 @@ import {
 
 import styles from "./diets.module.scss";
 import { useState } from "react";
+import Image from "next/future/image";
+
+import backgroundWood from "../../public/images/wood-min.png";
+import { PieChart } from "react-minimal-pie-chart";
 
 const DietsIndexPage: NextPage = () => {
   const [dietIndex, setDietIndex] = useState(0);
@@ -35,36 +39,70 @@ const DietsIndexPage: NextPage = () => {
   const canGoPrevious = (): boolean => {
     return dietIndex > 0;
   };
+  const defaultLabelStyle = {
+    fontSize: "8px",
+  };
 
   return (
     <div className={styles.dietsPageContainer}>
       <div className={styles.dietDayContainer}>
         <DietDay {...placeholderProps[dietIndex]} />
+        <div className={styles.dietDayControlsContainer}>
+          <div className={styles.dietDayControls}>
+            <button
+              disabled={!canGoPrevious()}
+              className={styles.button}
+              onClick={previousDay}
+            >
+              {<FontAwesomeIcon icon={faChevronLeft} />}
+            </button>
+            <h2 className={styles.day}>
+              {dateFormatter(placeholderProps[dietIndex].date)}
+            </h2>
+            <button
+              disabled={!canGoNext()}
+              className={styles.button}
+              onClick={nextDay}
+            >
+              {<FontAwesomeIcon icon={faChevronRight} />}
+            </button>
+          </div>
+        </div>
       </div>
-      <div className={styles.dietDayControls}>
-        <button
-          disabled={!canGoPrevious()}
-          className={styles.button}
-          onClick={previousDay}
-        >
-          {<FontAwesomeIcon icon={faChevronLeft} />}
-        </button>
-        <h2 className={styles.day}>
-          {dateFormatter(placeholderProps[dietIndex].date)}
-        </h2>
-        <button
-          disabled={!canGoNext()}
-          className={styles.button}
-          onClick={nextDay}
-        >
-          {<FontAwesomeIcon icon={faChevronRight} />}
-        </button>
+
+      <div className={styles.analytics}>
+        <div className={styles.macro}>
+          <div className={styles.numbers}>
+            <h3 className={styles.header}>Analytics</h3>
+            <div className={styles.data}>Calories: </div>
+            <div className={styles.data}>Fats: </div>
+            <div className={styles.data}>Protein: </div>
+            <div className={styles.data}>Carbs: </div>
+          </div>
+          <div className={styles.pieChart}>
+            <PieChart
+              animate
+              label={({ dataEntry }) => dataEntry.value}
+              labelStyle={{
+                ...defaultLabelStyle,
+              }}
+              data={[
+                { title: "One", value: 10, color: "#E38627" },
+                { title: "Two", value: 15, color: "#C13C37" },
+                { title: "Three", value: 20, color: "#6A2135" },
+              ]}
+            />
+          </div>
+        </div>
       </div>
+
       <div className={styles.suggestion}>
-        <span className={styles.header}>Don&apos;t like what you see?</span>
-        <Link href="/diets/suggest">
-          <a className={styles.link}>Contact us here</a>
-        </Link>
+        <div className={styles.text}>
+          <div className={styles.header}>Don&apos;t like what you see?</div>
+          <Link href="/diets/suggest">
+            <a className={styles.link}>Contact us here</a>
+          </Link>
+        </div>
       </div>
     </div>
   );

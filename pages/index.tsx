@@ -7,7 +7,7 @@ import backgroundMobile from "../public/images/main-img-phone.png";
 import backgroundTablet from "../public/images/main-img-tablet.png";
 import backgroundDesktop from "../public/images/main-img-desktop.png";
 
-const getBackgreoundImage = (deviceType: string) => {
+const getBackgroundImage = (deviceType: string) => {
   switch (deviceType) {
     case "mobile":
       return backgroundMobile;
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           <Image
             className={styles.image}
             layout="fill"
-            src={getBackgreoundImage(deviceType)}
+            src={getBackgroundImage(deviceType)}
             priority
             alt="diet"
             placeholder="blur"

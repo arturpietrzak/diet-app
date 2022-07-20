@@ -4,50 +4,116 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 95vh;
 
   .dietDayContainer {
     width: 100%;
+
+    .dietDayControlsContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 3rem;
+
+      .dietDayControls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30rem;
+
+        .day {
+          font-size: 1.25rem;
+        }
+
+        .button {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 100%;
+          border: 1px solid $color-secondary;
+          background-color: $color-secondary;
+          color: #fff;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          svg {
+            height: 1.5rem;
+          }
+
+          &:hover {
+            background-color: $color-primary;
+            color: #000;
+          }
+
+          &:disabled {
+            background-color: rgba($color-gray, 0.1);
+            color: rgba($color-gray, 0.1);
+            pointer-events: none;
+          }
+        }
+      }
+    }
   }
 
-  .dietDayControls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 30rem;
+  .analytics {
+    background-color: $color-secondary;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
 
-    .day {
-      font-size: 1.25rem;
+    .macro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .header {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .data {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .suggestion {
+    height: 10rem;
+    background: url("../../public/images/wood-min.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    object-fit: fill;
+
+    .header {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
     }
 
-    .button {
-      width: 3rem;
-      height: 3rem;
-      border-radius: 100%;
-      border: 1px solid $color-secondary;
-      background-color: $color-secondary;
-      color: #fff;
-
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-
-      svg {
-        transform: scale(1.25);
-      }
+    .link {
+      font-weight: 500;
+      font-size: 1rem;
+      display: inline-block;
+      border-radius: 2rem;
+      background-color: $color-primary;
+      color: $color-background;
+      padding: 0.75rem 2rem;
+      transition: 0.3s background-color ease-in-out;
 
       &:hover {
-        background-color: $color-primary;
-        color: #000;
-      }
-
-      &:disabled {
-        background-color: rgba($color-gray, 0.1);
-        color: rgba($color-gray, 0.1);
-        pointer-events: none;
+        background-color: darken($color-primary, 10%);
       }
     }
   }
