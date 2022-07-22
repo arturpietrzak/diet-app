@@ -16,6 +16,13 @@ import Image from "next/future/image";
 
 import backgroundWood from "../../public/images/wood-min.png";
 import { PieChart } from "react-minimal-pie-chart";
+import Suggestion from "../../components/layouts/Suggestion/Suggestion";
+
+<style>{`
+        text: {
+            font-size: 1.5rem;
+        }
+      `}</style>;
 
 const DietsIndexPage: NextPage = () => {
   const [dietIndex, setDietIndex] = useState(0);
@@ -39,34 +46,35 @@ const DietsIndexPage: NextPage = () => {
   const canGoPrevious = (): boolean => {
     return dietIndex > 0;
   };
-  const defaultLabelStyle = {
+  const labelStyle = {
     fontSize: "8px",
+    color: "#ffffff",
   };
 
   return (
     <div className={styles.dietsPageContainer}>
-      <div className={styles.dietDayContainer}>
-        <DietDay {...placeholderProps[dietIndex]} />
-        <div className={styles.dietDayControlsContainer}>
-          <div className={styles.dietDayControls}>
-            <button
-              disabled={!canGoPrevious()}
-              className={styles.button}
-              onClick={previousDay}
-            >
-              {<FontAwesomeIcon icon={faChevronLeft} />}
-            </button>
-            <h2 className={styles.day}>
-              {dateFormatter(placeholderProps[dietIndex].date)}
-            </h2>
-            <button
-              disabled={!canGoNext()}
-              className={styles.button}
-              onClick={nextDay}
-            >
-              {<FontAwesomeIcon icon={faChevronRight} />}
-            </button>
-          </div>
+      <div className={styles.dietSection}>
+        <div className={styles.dietDayContainer}>
+          <DietDay {...placeholderProps[dietIndex]} />
+        </div>
+        <div className={styles.dietDayControls}>
+          <button
+            disabled={!canGoPrevious()}
+            className={styles.button}
+            onClick={previousDay}
+          >
+            {<FontAwesomeIcon icon={faChevronLeft} />}
+          </button>
+          <h2 className={styles.day}>
+            {dateFormatter(placeholderProps[dietIndex].date)}
+          </h2>
+          <button
+            disabled={!canGoNext()}
+            className={styles.button}
+            onClick={nextDay}
+          >
+            {<FontAwesomeIcon icon={faChevronRight} />}
+          </button>
         </div>
       </div>
 
@@ -83,9 +91,12 @@ const DietsIndexPage: NextPage = () => {
             <div className={styles.pieChart}>
               <PieChart
                 animate
+                animationEasing="ease-out"
                 label={({ dataEntry }) => dataEntry.value}
                 labelStyle={{
-                  ...defaultLabelStyle,
+                  fontSize: "8px",
+                  fill: "#FFFFFF",
+                  fontWeight: "400",
                 }}
                 data={[
                   { title: "One", value: 10, color: "#E38627" },
@@ -96,14 +107,7 @@ const DietsIndexPage: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.suggestion}>
-          <div className={styles.text}>
-            <div className={styles.header}>Don&apos;t like what you see?</div>
-            <Link href="/diets/suggest">
-              <a className={styles.link}>Contact us here</a>
-            </Link>
-          </div>
-        </div>
+        <Suggestion />
       </div>
     </div>
   );

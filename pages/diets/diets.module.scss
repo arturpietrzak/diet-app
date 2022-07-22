@@ -2,73 +2,75 @@
 
 .dietsPageContainer {
   display: grid;
-  grid-template-columns: 35rem 4fr;
+  grid-template-columns: 2fr 5fr;
   grid-gap: 1rem;
   height: 100vh;
   overflow: hidden;
 
-  .dietDayContainer {
-    width: 100%;
-    overflow-y: scroll;
-    margin-bottom: 0.5rem;
+  .dietSection {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
-    .dietDayControlsContainer {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
+    .dietDayContainer {
       width: 100%;
-      margin-bottom: 2.5rem;
-      position: relative;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
 
-      .dietDayControls {
-        display: flex;
-        position: fixed;
-        justify-content: space-around;
+      .dietDayControlsContainer {
+        flex-direction: row;
         align-items: center;
-        width: unset;
-        bottom: 1rem;
-        padding: 1.25rem;
-        gap: 2rem;
-        left: 1rem;
-        background-color: $color-secondary;
-        right: calc(100% - 36rem);
-        border-radius: 0 0 0.5rem 0.5rem;
+        justify-content: space-around;
+        width: 100%;
+        position: relative;
+      }
+    }
 
-        .day {
-          font-size: 1.25rem;
+    .dietDayControls {
+      margin-top: 1rem;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-secondary;
+      border-radius: 0.5rem;
+
+      .day {
+        font-size: 1.25rem;
+      }
+
+      .button {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        border: 1px solid $color-secondary;
+        background-color: $color-secondary;
+        color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+          height: 1.5rem;
         }
 
-        .button {
-          width: 2.5rem;
-          height: 2.5rem;
-          border-radius: 100%;
-          border: 1px solid $color-secondary;
-          background-color: $color-secondary;
-          color: #fff;
+        &:hover {
+          background-color: $color-primary;
+          color: #000;
+        }
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          font-weight: bold;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
-
-          svg {
-            height: 1.5rem;
-          }
-
-          &:hover {
-            background-color: $color-primary;
-            color: #000;
-          }
-
-          &:disabled {
-            background-color: rgba($color-gray, 0.1);
-            color: rgba($color-gray, 0.1);
-            pointer-events: none;
-          }
+        &:disabled {
+          background-color: rgba($color-gray, 0.1);
+          color: rgba($color-gray, 0.1);
+          pointer-events: none;
         }
       }
     }
@@ -97,41 +99,6 @@
 
       .pieChart {
         height: 20rem;
-      }
-    }
-  }
-
-  .suggestion {
-    height: 10rem;
-    background: url("../../public/images/wood-min.png") no-repeat center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-
-    object-fit: fill;
-
-    .header {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-
-    .link {
-      font-weight: 500;
-      font-size: 1rem;
-      display: inline-block;
-      border-radius: 2rem;
-      background-color: $color-primary;
-      color: $color-background;
-      padding: 0.75rem 2rem;
-      transition: 0.3s background-color ease-in-out;
-
-      &:hover {
-        background-color: darken($color-primary, 10%);
       }
     }
   }
