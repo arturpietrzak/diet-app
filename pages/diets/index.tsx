@@ -17,12 +17,7 @@ import Image from "next/future/image";
 import backgroundWood from "../../public/images/wood-min.png";
 import { PieChart } from "react-minimal-pie-chart";
 import Suggestion from "../../components/layouts/Suggestion/Suggestion";
-
-<style>{`
-        text: {
-            font-size: 1.5rem;
-        }
-      `}</style>;
+import Analytics from "../../components/diets/Analytics/Analytics";
 
 const DietsIndexPage: NextPage = () => {
   const [dietIndex, setDietIndex] = useState(0);
@@ -45,10 +40,6 @@ const DietsIndexPage: NextPage = () => {
 
   const canGoPrevious = (): boolean => {
     return dietIndex > 0;
-  };
-  const labelStyle = {
-    fontSize: "8px",
-    color: "#ffffff",
   };
 
   return (
@@ -79,34 +70,8 @@ const DietsIndexPage: NextPage = () => {
       </div>
 
       <div>
-        <div className={styles.analytics}>
-          <div className={styles.macro}>
-            <div className={styles.numbers}>
-              <h3 className={styles.header}>Analytics</h3>
-              <div className={styles.data}>Calories: </div>
-              <div className={styles.data}>Fats: </div>
-              <div className={styles.data}>Protein: </div>
-              <div className={styles.data}>Carbs: </div>
-            </div>
-            <div className={styles.pieChart}>
-              <PieChart
-                animate
-                animationEasing="ease-out"
-                label={({ dataEntry }) => dataEntry.value}
-                labelStyle={{
-                  fontSize: "8px",
-                  fill: "#FFFFFF",
-                  fontWeight: "400",
-                }}
-                data={[
-                  { title: "One", value: 10, color: "#E38627" },
-                  { title: "Two", value: 15, color: "#C13C37" },
-                  { title: "Three", value: 20, color: "#6A2135" },
-                ]}
-              />
-            </div>
-          </div>
-        </div>
+        <Analytics //protein={300} fat={200} carbs={100}
+        />
         <Suggestion />
       </div>
     </div>
