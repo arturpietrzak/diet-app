@@ -17,12 +17,41 @@
       margin-bottom: 0.5rem;
     }
 
-    .data {
-      margin-top: 1rem;
+    .legend {
+      .carbs,
+      .protein,
+      .fat {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .carbs:before,
+      .protein:before,
+      .fat:before {
+        content: "";
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin-right: 5px;
+      }
+
+      .carbs:before {
+        background-color: #4287f5;
+      }
+
+      .fat:before {
+        background-color: #d6410f;
+      }
+
+      .protein:before {
+        background-color: #6a2135;
+      }
     }
 
     .pieChart {
       position: relative;
+      display: flex;
 
       .pieChartCalories {
         position: absolute;

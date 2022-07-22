@@ -70,8 +70,7 @@ const DietsIndexPage: NextPage = () => {
       </div>
 
       <div>
-        <Analytics //protein={300} fat={200} carbs={100}
-        />
+        <Analytics calories={1900} protein={300} fat={200} carbs={100} />
         <Suggestion />
       </div>
     </div>
