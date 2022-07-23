@@ -4,22 +4,17 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0 auto;
 
   @media screen and (max-width: $breakpoint-md) {
+    margin: 0 auto;
     max-width: 520px;
   }
 
   .dietSection {
     height: 100%;
+    width: 100%;
 
     .dietDayContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      margin: 0;
-
       .dietDayControlsContainer {
         flex-direction: row;
         align-items: center;
@@ -31,23 +26,19 @@
 
     .dietDayControls {
       margin-top: 1rem;
-      padding: 1rem 3rem;
+      padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: $color-secondary;
       border-radius: 0.5rem;
 
-      .day {
-        font-size: 1.25rem;
-      }
-
       .button {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
+        height: 2rem;
         border-radius: 100%;
         border: 1px solid $color-secondary;
-        background-color: $color-secondary;
+        background-color: darken($color-secondary, 5%);
         color: #fff;
 
         display: flex;
@@ -59,7 +50,7 @@
         transition: all 0.3s ease-in-out;
 
         svg {
-          height: 1.5rem;
+          height: 1.25rem;
         }
 
         &:hover {
@@ -81,44 +72,24 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-lg) {
+@media screen and (min-width: $breakpoint-md) {
   .dietsPageContainer {
     display: grid;
     grid-template-columns: 2fr 5fr;
     grid-gap: 1rem;
     height: 100vh;
-    overflow: hidden;
 
     .dietSection {
-      height: 100%;
       overflow: hidden;
       display: flex;
       flex-direction: column;
 
       .dietDayContainer {
-        width: 100%;
         overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-
-        .dietDayControlsContainer {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-around;
-          width: 100%;
-          position: relative;
-        }
       }
 
       .dietDayControls {
-        margin-top: 1rem;
         padding: 1rem 3rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $color-secondary;
-        border-radius: 0.5rem;
 
         .day {
           font-size: 1.25rem;
@@ -127,35 +98,16 @@
         .button {
           width: 2.5rem;
           height: 2.5rem;
-          border-radius: 100%;
-          border: 1px solid $color-secondary;
-          background-color: $color-secondary;
-          color: #fff;
-
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          font-weight: bold;
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
 
           svg {
             height: 1.5rem;
           }
-
-          &:hover {
-            background-color: $color-primary;
-            color: #000;
-          }
-
-          &:disabled {
-            background-color: rgba($color-gray, 0.1);
-            color: rgba($color-gray, 0.1);
-            pointer-events: none;
-          }
         }
       }
+    }
+
+    .analyticsContainer {
+      margin-top: 0;
     }
   }
 }
