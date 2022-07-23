@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Link from "next/link";
 import DietDay from "../../components/diets/DietDropdown/DietDay";
 
 import { dateFormatter } from "../../utils/dateFormatter";
@@ -12,10 +11,7 @@ import {
 
 import styles from "./diets.module.scss";
 import { useState } from "react";
-import Image from "next/future/image";
 
-import backgroundWood from "../../public/images/wood-min.png";
-import { PieChart } from "react-minimal-pie-chart";
 import Suggestion from "../../components/layouts/Suggestion/Suggestion";
 import Analytics from "../../components/diets/Analytics/Analytics";
 
@@ -70,7 +66,13 @@ const DietsIndexPage: NextPage = () => {
       </div>
 
       <div>
-        <Analytics calories={1900} protein={300} fat={200} carbs={100} />
+        <Analytics
+          pastCalories={pastCaloriesPlaceholder}
+          calories={1900}
+          protein={300}
+          fat={200}
+          carbs={100}
+        />
         <Suggestion />
       </div>
     </div>
@@ -158,6 +160,37 @@ const placeholderProps = [
       },
     ],
   },
+];
+
+const pastCaloriesPlaceholder = [
+  { dateTime: new Date(2022, 6, 19).getTime(), calories: 1900 },
+  { dateTime: new Date(2022, 6, 18).getTime(), calories: 1930 },
+  { dateTime: new Date(2022, 6, 17).getTime(), calories: 1870 },
+  { dateTime: new Date(2022, 6, 16).getTime(), calories: 1920 },
+  { dateTime: new Date(2022, 6, 15).getTime(), calories: 1700 },
+  { dateTime: new Date(2022, 6, 14).getTime(), calories: 1880 },
+  { dateTime: new Date(2022, 6, 13).getTime(), calories: 2100 },
+  { dateTime: new Date(2022, 6, 12).getTime(), calories: 2050 },
+  { dateTime: new Date(2022, 6, 11).getTime(), calories: 1950 },
+  { dateTime: new Date(2022, 6, 10).getTime(), calories: 1970 },
+  { dateTime: new Date(2022, 6, 9).getTime(), calories: 1940 },
+  { dateTime: new Date(2022, 6, 8).getTime(), calories: 1970 },
+  { dateTime: new Date(2022, 6, 7).getTime(), calories: 1930 },
+  { dateTime: new Date(2022, 6, 6).getTime(), calories: 1940 },
+  { dateTime: new Date(2022, 6, 5).getTime(), calories: 1940 },
+  { dateTime: new Date(2022, 6, 4).getTime(), calories: 1950 },
+  { dateTime: new Date(2022, 6, 3).getTime(), calories: 2000 },
+  { dateTime: new Date(2022, 6, 2).getTime(), calories: 1980 },
+  { dateTime: new Date(2022, 6, 1).getTime(), calories: 1990 },
+  { dateTime: new Date(2022, 6, 0).getTime(), calories: 2000 },
+  { dateTime: new Date(2022, 5, 30).getTime(), calories: 2020 },
+  { dateTime: new Date(2022, 5, 29).getTime(), calories: 2020 },
+  { dateTime: new Date(2022, 5, 28).getTime(), calories: 2040 },
+  { dateTime: new Date(2022, 5, 27).getTime(), calories: 2090 },
+  { dateTime: new Date(2022, 5, 26).getTime(), calories: 2070 },
+  { dateTime: new Date(2022, 5, 25).getTime(), calories: 2090 },
+  { dateTime: new Date(2022, 5, 24).getTime(), calories: 2120 },
+  { dateTime: new Date(2022, 5, 23).getTime(), calories: 2200 },
 ];
 
 export default DietsIndexPage;

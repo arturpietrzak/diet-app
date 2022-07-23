@@ -6,10 +6,14 @@
   padding: 0.75rem;
   margin-bottom: 1rem;
 
+  display: flex;
+  justify-content: space-between;
+
   .macro {
     display: grid;
     grid-template-columns: 1fr 1fr;
     display: flex;
+    justify-content: space-around;
 
     .header {
       font-size: 1.25rem;
@@ -24,6 +28,7 @@
         margin-top: 1rem;
         display: flex;
         align-items: center;
+        width: max-content;
       }
 
       .carbs:before,
@@ -33,7 +38,7 @@
         display: inline-block;
         width: 1rem;
         height: 1rem;
-        margin-right: 5px;
+        margin-right: 0.5rem;
       }
 
       .carbs:before {
@@ -52,6 +57,7 @@
     .pieChart {
       position: relative;
       display: flex;
+      margin-left: 2rem;
 
       .pieChartCalories {
         position: absolute;
