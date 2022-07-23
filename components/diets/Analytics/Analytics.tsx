@@ -78,7 +78,7 @@ const Analytics = (props: AnalyticsProps) => {
       <div className={styles.analytics}>
         <div className={styles.macro}>
           <div className={styles.numbers}>
-            <h3 className={styles.header}>Analytics</h3>
+            <h3 className={styles.header}>Macro for today</h3>
             <div className={styles.legend}>
               <div className={styles.carbs}>Fats (grams)</div>
               <div className={styles.fat}>Protein (grams)</div>
@@ -115,6 +115,7 @@ const Analytics = (props: AnalyticsProps) => {
           </div>
         </div>
         <div className={styles.chartContainer}>
+          <h3 className={styles.header}>Calories over the past month</h3>
           <ApexCharts
             height={300}
             type="area"

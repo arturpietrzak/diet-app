@@ -65,7 +65,7 @@ const DietsIndexPage: NextPage = () => {
         </div>
       </div>
 
-      <div>
+      <div className={styles.analyticsContainer}>
         <Analytics
           pastCalories={pastCaloriesPlaceholder}
           calories={1900}
