@@ -5,7 +5,8 @@ $breakpoint-lg: 1600px; // desktop
 $breakpoint-xl: 1920px; // desktop
 
 // Variables
-$color-primary: #9ef1e2;
+$color-primary: #a8872b;
+$color-primary-light: lighten($color-primary, 15%);
 $color-secondary: #232323;
 $color-background: #0d0c0f;
 $color-white: #fff;
