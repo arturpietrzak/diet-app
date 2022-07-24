@@ -20,19 +20,27 @@
   }
 
   .link {
-    font-weight: 500;
-    font-size: 1rem;
-    display: inline-block;
-    border-radius: 2rem;
-    background-color: $color-primary;
-    color: $color-background;
-    padding: 0.75rem 2rem;
-    transition: 0.3s background-color ease-in-out;
-    width: fit-content;
     margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50rem;
+    background-color: $color-primary-light;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    outline: none;
+
+    // center the button
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
-      background-color: darken($color-primary, 25%);
+      background-color: lighten($color-primary-light, 5);
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     }
   }
 }

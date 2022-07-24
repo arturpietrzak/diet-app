@@ -73,7 +73,7 @@ const DietsIndexPage: NextPage = () => {
           fat={200}
           carbs={100}
         />
-        <Suggestion />
+        <Suggestion message="Don't like what you see?" />
       </div>
     </div>
   );

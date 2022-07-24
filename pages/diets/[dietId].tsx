@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const DietsShowPage: NextPage = () => {
   const router = useRouter();
   const { dietId } = router.query;
-  console.log(dietId);
   return (
     <div className="">
       <h1>Diets page</h1>
