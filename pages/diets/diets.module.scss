@@ -33,6 +33,10 @@
       background-color: $color-secondary;
       border-radius: 0.5rem;
 
+      @media screen and (min-width: $breakpoint-md) {
+        padding: 1rem;
+      }
+
       .button {
         width: 2rem;
         height: 2rem;
@@ -75,9 +79,15 @@
 @media screen and (min-width: $breakpoint-md) {
   .dietsPageContainer {
     display: grid;
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 2fr 3fr;
     grid-gap: 1rem;
     height: 100vh;
+    max-width: $breakpoint-xl;
+    margin: 0 auto;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      grid-template-columns: 2fr 5fr;
+    }
 
     .dietSection {
       overflow: hidden;
@@ -89,8 +99,6 @@
       }
 
       .dietDayControls {
-        padding: 1rem 3rem;
-
         .day {
           font-size: 1.25rem;
         }

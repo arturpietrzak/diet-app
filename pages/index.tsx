@@ -9,7 +9,7 @@ import backgroundDesktop from "../public/images/main-img-desktop.png";
 
 const getBackgroundImage = (deviceType: string) => {
   switch (deviceType) {
-    case "mobile":
+    case "phone":
       return backgroundMobile;
     case "tablet":
       return backgroundTablet;
@@ -26,6 +26,8 @@ const Home: NextPage = () => {
   if (deviceType === "undefined") {
     return <div></div>;
   }
+
+  console.log(deviceType);
 
   return (
     <div className={styles.pageContainer}>
