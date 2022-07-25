@@ -7,6 +7,7 @@ import backgroundMobile from "../public/images/main-img-phone.png";
 import backgroundTablet from "../public/images/main-img-tablet.png";
 import backgroundDesktop from "../public/images/main-img-desktop.png";
 import Suggestion from "../components/layouts/Suggestion/Suggestion";
+import PlanForm from "../components/Form/PlanForm/PlanForm";
 
 const getBackgroundImage = (deviceType: string) => {
   switch (deviceType) {
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={styles.pageContainer}>
+      <PlanForm closeForm={() => {}} planType={"basic"} />
       <header className={styles.header}>
         <div className={styles.headerText}>
           <p>

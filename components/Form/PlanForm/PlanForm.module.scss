@@ -1,0 +1,14 @@
+@import "styles/variables.scss";
+
+.form {
+  background-color: $color-secondary;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  .fieldGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}

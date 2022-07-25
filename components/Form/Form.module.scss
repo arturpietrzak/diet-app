@@ -1,0 +1,14 @@
+.formContainer {
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  .form {
+    position: fixed;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
