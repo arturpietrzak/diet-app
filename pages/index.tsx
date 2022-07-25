@@ -8,6 +8,7 @@ import backgroundTablet from "../public/images/main-img-tablet.png";
 import backgroundDesktop from "../public/images/main-img-desktop.png";
 import Suggestion from "../components/layouts/Suggestion/Suggestion";
 import PlanForm from "../components/Form/PlanForm/PlanForm";
+import { useEffect, useState } from "react";
 
 const getBackgroundImage = (deviceType: string) => {
   switch (deviceType) {
@@ -25,13 +26,31 @@ const getBackgroundImage = (deviceType: string) => {
 const Home: NextPage = () => {
   const deviceType = useDeviceType();
 
+  const [formIsVisible, setFormIsVisible] = useState(false);
+  const [planType, setPlanType] = useState<"premium" | "basic">("premium");
+
+  useEffect(() => {
+    if (formIsVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [formIsVisible]);
+
   if (deviceType === "undefined") {
     return <div></div>;
   }
 
   return (
     <div className={styles.pageContainer}>
-      <PlanForm closeForm={() => {}} planType={"basic"} />
+      {formIsVisible && (
+        <PlanForm
+          closeForm={() => {
+            setFormIsVisible(false);
+          }}
+          planType={planType}
+        />
+      )}
       <header className={styles.header}>
         <div className={styles.headerText}>
           <p>
@@ -63,7 +82,14 @@ const Home: NextPage = () => {
                   <li>1-on-1 consultations with dietician</li>
                 </ul>
               </div>
-              <button>Choose this plan</button>
+              <button
+                onClick={() => {
+                  setPlanType("premium");
+                  setFormIsVisible(true);
+                }}
+              >
+                Choose this plan
+              </button>
             </div>
             <div className={`${styles.card} ${styles.premium}`}>
               <div className={styles.planInfo}>
@@ -75,7 +101,14 @@ const Home: NextPage = () => {
                   <li>Training plan with instructions</li>
                 </ul>
               </div>
-              <button>Choose this plan</button>
+              <button
+                onClick={() => {
+                  setPlanType("premium");
+                  setFormIsVisible(true);
+                }}
+              >
+                Choose this plan
+              </button>
             </div>
           </div>
         </div>
