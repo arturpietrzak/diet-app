@@ -11,8 +11,9 @@
   justify-content: center;
 
   .form {
+    padding: 1rem;
     z-index: 12;
-    margin: 0 1rem;
-    position: relative;
+    position: fixed;
+    width: 100%;
   }
 }
